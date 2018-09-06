@@ -12,13 +12,13 @@ class DataLoaderTest {
 
     @Test
     void test_loadCSV() {
-        List<String[]> data = DataLoader.loadCSV();
+        List<String[]> data = DataLoader.loadCSV("resources/products.csv");
         assertEquals("[1001, beer, 1, 1.20]", Arrays.toString(data.get(0)));
     }
 
     @Test
     void test_loadTXT() {
-        List<String> data = DataLoader.loadTXT();
-        assertEquals("1001", data.get(0));
+        List<Integer> data = DataLoader.loadTXT("resources/barcodes.txt");
+        assertEquals(new Integer(1001), data.get(0));
     }
 }
